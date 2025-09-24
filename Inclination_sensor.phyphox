@@ -1,0 +1,116 @@
+<phyphox xmlns="https://phyphox.org/xml" version="1.19">
+  <title>IMU</title>
+  <category>Simple custom experiments</category>
+  
+  <description>A simple experiment.</description>
+  <data-containers>
+<container size="1" static="false" init="5.683098951E2" >mag_time</container>
+<container size="1" static="false" init="-1.000597534E2" >magY</container>
+<container size="1" static="false" init="-1.797095703E3" >magZ</container>
+<container size="1" static="false" init="9.337432709E0" >accZ</container>
+<container size="1" static="false" init="-6.553123239E-3" >gyroZ</container>
+<container size="1" static="false" init="5.683014331E2" >acc_time</container>
+<container size="1" static="false" init="3.021017761E0" >accX</container>
+<container size="1" static="false" init="5.683098951E2" >gyro_time</container>
+<container size="1" static="false" init="5.113949627E-2" >gyroY</container>
+<container size="1" static="false" init="1.749105225E2" >magX</container>
+<container size="1" static="false" init="-3.811074829E-1" >accY</container>
+<container size="1" static="false" init="-1.325820237E-1" >gyroX</container>
+
+</data-containers>
+  <input>
+    <sensor rate="20" type="accelerometer">
+      <output component="x">accX</output>
+      <output component="y">accY</output>
+      <output component="z">accZ</output>
+      <output component="t">acc_time</output>
+    </sensor>
+    <sensor rate="20" type="gyroscope">
+      <output component="x">gyroX</output>
+      <output component="y">gyroY</output>
+      <output component="z">gyroZ</output>
+      <output component="t">gyro_time</output>
+    </sensor>
+    <sensor rate="20.0" type="magnetic_field">
+      <output component="x">magX</output>
+      <output component="y">magY</output>
+      <output component="z">magZ</output>
+      <output component="t">mag_time</output>
+    </sensor>
+  </input>
+  <output>
+    <bluetooth name="ESP32_Phyphox_Output" uuid="4fafc201-1fb5-459e-8fcc-c5c9c331914b" autoConnect="true">
+      <input char="beb5483e-36e1-4688-b7f5-ea07361b26a8" conversion="float32LittleEndian" offset="0">accX</input>
+      <input char="beb5483e-36e1-4688-b7f5-ea07361b26a8" conversion="float32LittleEndian" offset="4">accY</input>
+      <input char="beb5483e-36e1-4688-b7f5-ea07361b26a8" conversion="float32LittleEndian" offset="8">accZ</input>
+      <input char="beb5483e-36e1-4688-b7f5-ea07361b26a8" conversion="float32LittleEndian" offset="12">gyroX</input>
+      <input char="beb5483e-36e1-4688-b7f5-ea07361b26a8" conversion="float32LittleEndian" offset="16">gyroY</input>
+      <input char="beb5483e-36e1-4688-b7f5-ea07361b26a8" conversion="float32LittleEndian" offset="20">gyroZ</input>
+      <input char="beb5483e-36e1-4688-b7f5-ea07361b26a8" conversion="float32LittleEndian" offset="24">magX</input>
+      <input char="beb5483e-36e1-4688-b7f5-ea07361b26a8" conversion="float32LittleEndian" offset="28">magY</input>
+      <input char="beb5483e-36e1-4688-b7f5-ea07361b26a8" conversion="float32LittleEndian" offset="32">magZ</input>
+    </bluetooth>
+  </output>
+  <analysis>
+    <timer/>
+  </analysis>
+  <views>
+    <view label="Accelerometer">
+      <value label="X">
+        <input>accX</input>
+      </value>
+      <value label="Y">
+        <input>accY</input>
+      </value>
+      <value label="Z">
+        <input>accZ</input>
+      </value>
+    </view>
+    <view label="Gyroscope">
+      <value label="X">
+        <input>gyroX</input>
+      </value>
+      <value label="Y">
+        <input>gyroY</input>
+      </value>
+      <value label="Z">
+        <input>gyroZ</input>
+      </value>
+    </view>
+    <view label="Magnetometer">
+      <value label="X">
+        <input>magX</input>
+      </value>
+      <value label="Y">
+        <input>magY</input>
+      </value>
+      <value label="Z">
+        <input>magZ</input>
+      </value>
+    </view>
+  </views>
+  <export>
+    <set name="Accelerometer">
+      <data name="Time (s)">acc_time</data>
+      <data name="X (m/s^2)">accX</data>
+      <data name="Y (m/s^2)">accY</data>
+      <data name="Z (m/s^2)">accZ</data>
+    </set>
+    <set name="Gyroscope">
+      <data name="Time (s)">gyro_time</data>
+      <data name="X (rad/s)">gyroX</data>
+      <data name="Y (rad/s)">gyroY</data>
+      <data name="Z (rad/s)">gyroZ</data>
+    </set>
+    <set name="Magnetometer">
+      <data name="Time (s)">mag_time</data>
+      <data name="X (µT)">magX</data>
+      <data name="Y (µT)">magY</data>
+      <data name="Z (µT)">magZ</data>
+    </set>
+  </export>
+
+<state-title>Measurement 24/9/2568 BE, 23:03</state-title>
+<color>blue</color>
+<events><start experimentTime="0.0" systemTime="1758685688479" /><pause experimentTime="1.3391682083333762" systemTime="1758685689818" /><start experimentTime="1.3391682083333762" systemTime="1758685719163" /><pause experimentTime="3.191032166666673" systemTime="1758685721015" /><start experimentTime="3.191032166666673" systemTime="1758685880300" /><pause experimentTime="4.47637812500011" systemTime="1758685881586" /><start experimentTime="4.47637812500011" systemTime="1758686119998" /><pause experimentTime="5.645885916666884" systemTime="1758686121167" /><start experimentTime="5.645885916666884" systemTime="1758686123997" /><pause experimentTime="7.330664583333373" systemTime="1758686125682" /><start experimentTime="7.330664583333373" systemTime="1758686125846" /><pause experimentTime="9.717451166666706" systemTime="1758686128233" /><start experimentTime="9.717451166666706" systemTime="1758686132313" /><pause experimentTime="11.253024041666777" systemTime="1758686133849" /><start experimentTime="11.253024041666777" systemTime="1758686139445" /><pause experimentTime="12.639437250000128" systemTime="1758686140832" /><start experimentTime="12.639437250000128" systemTime="1758686148593" /><pause experimentTime="13.623893500000122" systemTime="1758686149577" /><start experimentTime="13.623893500000122" systemTime="1758686152512" /><pause experimentTime="14.942308625000123" systemTime="1758686153830" /><start experimentTime="14.942308625000123" systemTime="1758686157261" /><pause experimentTime="16.02862325000001" systemTime="1758686158347" /><start experimentTime="16.02862325000001" systemTime="1758686294157" /><pause experimentTime="17.430268333333288" systemTime="1758686295559" /><start experimentTime="17.430268333333288" systemTime="1758686299406" /><pause experimentTime="163.4248035416665" systemTime="1758686445397" /><start experimentTime="163.4248035416665" systemTime="1758686448144" /><pause experimentTime="165.92763370833313" systemTime="1758686450647" /><start experimentTime="165.92763370833313" systemTime="1758687763865" /><pause experimentTime="219.924007833333" systemTime="1758687817861" /><start experimentTime="219.924007833333" systemTime="1758689387618" /><pause experimentTime="221.80739791666633" systemTime="1758689389500" /><start experimentTime="221.80739791666633" systemTime="1758689397793" /><pause experimentTime="244.0531680416659" systemTime="1758689420034" /><start experimentTime="244.0531680416659" systemTime="1758689537577" /><pause experimentTime="382.88187991666587" systemTime="1758689676403" /><start experimentTime="382.88187991666587" systemTime="1758689714664" /><pause experimentTime="459.5819319583327" systemTime="1758689791363" /><start experimentTime="459.5819319583327" systemTime="1758689809973" /><pause experimentTime="568.3290971249996" systemTime="1758689918718" /></events>
+</phyphox>
