@@ -25,7 +25,7 @@ This project demonstrates how to:
 4. Run experiment → pitch/roll calculated and buzzer toggles when condition met.
 
 ## Example Output
-Roll: 95.3 deg, Pitch: -2.4 deg
+Roll: 95.3 deg, Pitch: -2.4 deg.
 Buzzer ON (roll deviation > 12°)
 
 ## License
