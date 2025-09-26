@@ -1,5 +1,6 @@
-/T
-![Alt text](qr.png)
+<div align="center">
+  <img src="qr.png" alt="QR Code" width="250"/>
+</div>
 
 # phyphox_inclination_sensor
 
