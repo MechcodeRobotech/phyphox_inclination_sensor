@@ -1,4 +1,6 @@
+<p align="center">
 ![Alt text](qr.png)
+</p>
 
 # phyphox_inclination_sensor
 
