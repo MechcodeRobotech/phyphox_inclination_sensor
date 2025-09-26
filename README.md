@@ -1,3 +1,5 @@
+<img width="82000" height="82000" alt="qr_simplified" src="https://github.com/user-attachments/assets/2ff201da-8b1e-4173-909f-f0adab5a700b" />
+
 # phyphox_inclination_sensor
 
 # ESP32 Phyphox Kalman Buzzer
