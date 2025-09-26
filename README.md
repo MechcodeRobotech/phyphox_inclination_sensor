@@ -1,4 +1,4 @@
-![Alt text](phyphox_inclination_sensor/phyphox_inclination_sensor/qr.png)
+![Alt text](qr.png)
 
 # phyphox_inclination_sensor
 
